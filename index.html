@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organisational chart — Accounts &amp; Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F5F2;
+    --ink:#16211F;
+    --ink-soft:#5A6663;
+    --rule:#C9CFC9;
+    --card:#FFFFFF;
+    --teal:#12564F;
+    --teal-tint:#E3EDEA;
+    --indigo:#2E3F76;
+    --indigo-tint:#E5E8F1;
+    --plum:#6E2F4C;
+    --plum-tint:#F1E4EA;
+    --top:#0E2C2A;
+    --flag:#8A5A12;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased
+  }
+  .sheet{max-width:1280px;margin:0 auto;padding:40px 28px 64px}
+
+  header{border-bottom:1px solid var(--rule);padding-bottom:18px;margin-bottom:44px}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px
+  }
+  h1{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:20px;margin-top:14px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.04em
+  }
+
+  .card{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:11px 13px;position:relative}
+  .card .name{font-weight:600;font-size:14px;line-height:1.3;padding-right:56px}
+  .card .role{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-soft);margin-top:5px
+  }
+  .card .line{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-soft);
+    margin-top:7px;padding-top:6px;border-top:1px dotted var(--rule);letter-spacing:.02em
+  }
+  .code{
+    position:absolute;right:13px;top:12px;font-family:"IBM Plex Mono",monospace;
+    font-size:10px;letter-spacing:.06em;color:var(--ink-soft)
+  }
+
+  .apex{background:var(--top);border-color:var(--top);color:#fff;width:300px;margin:0 auto;text-align:center;padding:16px}
+  .apex .name{font-size:16px;padding:0}
+  .apex .role{color:#9DB5B1}
+  .apex.second{background:#fff;color:var(--ink);border:1.5px solid var(--top)}
+  .apex.second .role{color:var(--ink-soft)}
+
+  .drop{width:1px;height:30px;background:var(--rule);margin:0 auto}
+
+  .branches{display:grid;grid-template-columns:repeat(3,1fr);position:relative;padding-top:34px;align-items:start}
+  .branches::before{content:"";position:absolute;top:0;left:16.666%;right:16.666%;border-top:1px solid var(--rule)}
+  .branch{position:relative;padding:0 12px}
+  .branch::before{content:"";position:absolute;top:-34px;left:50%;width:1px;height:34px;background:var(--rule)}
+  .head{border-top:3px solid var(--hue);background:var(--tint)}
+  .head .role{color:var(--hue)}
+
+  .reports{
+    list-style:none;margin:0 0 0 26px;padding:18px 0 0 24px;
+    border-left:1px solid var(--rule);position:relative
+  }
+  .reports > li{position:relative;margin-bottom:10px}
+  .reports > li::before{content:"";position:absolute;left:-24px;top:24px;width:24px;height:1px;background:var(--rule)}
+  .reports > li > .card{border-left:3px solid var(--hue)}
+
+  .count{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-soft);margin:14px 0 0 26px
+  }
+
+  footer{
+    margin-top:52px;padding-top:16px;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-soft);line-height:1.9
+  }
+  footer b{color:var(--flag);font-weight:500}
+
+  @media (max-width:900px){
+    .branches{grid-template-columns:1fr;gap:40px}
+    .branches::before,.branch::before{display:none}
+  }
+  @media print{
+    @page{size:A3 landscape;margin:10mm}
+    body{background:#fff}
+    .sheet{padding:0;max-width:none}
+    .branch{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <p class="eyebrow">Organisational chart — Accounts &amp; Finance</p>
+    <h1>Reporting structure</h1>
+    <div class="meta">
+      <span>24 positions</span>
+      <span>4 reporting levels</span>
+      <span>3 verticals</span>
+      <span>All active</span>
+    </div>
+  </header>
+
+  <div class="card apex">
+    <div class="name">Harsh Chamaria</div>
+    <div class="role">Managing director</div>
+  </div>
+  <div class="drop"></div>
+  <div class="card apex second">
+    <div class="name">Jagdish Chandrayya Poojary</div>
+    <div class="role">Chief financial officer — vertical head</div>
+  </div>
+
+  <div class="branches">
+
+    <section class="branch" style="--hue:var(--teal);--tint:var(--teal-tint)">
+      <div class="card head">
+        <span class="code">VFP1978</span>
+        <div class="name">Chandra Prakash</div>
+        <div class="role">Finance controller</div>
+        <div class="line">Finance &amp; accounts · joined 25 Jun 2026</div>
+      </div>
+      <ul class="reports">
+        <li><div class="card"><span class="code">VFP1902</span>
+          <div class="name">Sahil Grover</div>
+          <div class="role">Accounts receivable head</div>
+          <div class="line">Accounts · joined 18 Apr 2026</div></div></li>
+        <li><div class="card"><span class="code">VFP843</span>
+          <div class="name">Chirag</div>
+          <div class="role">Operation head</div>
+          <div class="line">Finance · joined 29 Jul 2024</div></div></li>
+        <li><div class="card"><span class="code">VFP1247</span>
+          <div class="name">Shivam Gupta</div>
+          <div class="role">Accounts manager — payable</div>
+          <div class="line">Finance · joined 16 Jun 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP210</span>
+          <div class="name">Vinay Sharma</div>
+          <div class="role">Executive — accounts payable</div>
+          <div class="line">Finance · joined 11 Sep 2023</div></div></li>
+        <li><div class="card"><span class="code">VFP1725</span>
+          <div class="name">Komal Kumari Jha</div>
+          <div class="role">Senior accounts executive</div>
+          <div class="line">Accounts · joined 28 Jan 2026</div></div></li>
+        <li><div class="card"><span class="code">VFP1726</span>
+          <div class="name">Shweta</div>
+          <div class="role">Senior accounts executive</div>
+          <div class="line">Accounts · joined 28 Jan 2026</div></div></li>
+        <li><div class="card"><span class="code">VFP1408</span>
+          <div class="name">Adil</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 25 Aug 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP1949</span>
+          <div class="name">Aman Kumar Sah</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 08 Jun 2026</div></div></li>
+        <li><div class="card"><span class="code">VFP1948</span>
+          <div class="name">Rahul</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 08 Jun 2026</div></div></li>
+        <li><div class="card"><span class="code">VFP1791</span>
+          <div class="name">Vishal</div>
+          <div class="role">Field coordinator</div>
+          <div class="line">On-site support · joined 25 Feb 2026</div></div></li>
+      </ul>
+      <p class="count">10 direct reports</p>
+    </section>
+
+    <section class="branch" style="--hue:var(--indigo);--tint:var(--indigo-tint)">
+      <div class="card head">
+        <span class="code">VFP1203</span>
+        <div class="name">Deepak Bhoj</div>
+        <div class="role">Chartered financial analyst</div>
+        <div class="line">Accounts · joined 05 May 2025</div>
+      </div>
+      <ul class="reports">
+        <li><div class="card"><span class="code">VFP1201</span>
+          <div class="name">Shivam Setia</div>
+          <div class="role">Compliance officer</div>
+          <div class="line">Accounts · joined 21 Apr 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP1634</span>
+          <div class="name">Jatin Kumar Arora</div>
+          <div class="role">Senior accounts executive</div>
+          <div class="line">Accounts · joined 08 Dec 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP1181</span>
+          <div class="name">Manish</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 01 Apr 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP1690</span>
+          <div class="name">Narender Singh</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 12 Jan 2026</div></div></li>
+        <li><div class="card"><span class="code">VFP1299</span>
+          <div class="name">Parmanand Ray</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 01 Jul 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP1411</span>
+          <div class="name">Ramesh Kumar</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 01 Sep 2025</div></div></li>
+        <li><div class="card"><span class="code">VFP1767</span>
+          <div class="name">Shyam Pareek</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 12 Feb 2026</div></div></li>
+      </ul>
+      <p class="count">7 direct reports</p>
+    </section>
+
+    <section class="branch" style="--hue:var(--plum);--tint:var(--plum-tint)">
+      <div class="card head">
+        <span class="code">VFP1663</span>
+        <div class="name">Kameshwar Nath Tiwari</div>
+        <div class="role">Accounts head</div>
+        <div class="line">Accounts · joined 02 Jan 2026</div>
+      </div>
+      <ul class="reports">
+        <li><div class="card"><span class="code">VFP624</span>
+          <div class="name">Sarabjeet</div>
+          <div class="role">Senior accounts executive</div>
+          <div class="line">Accounts · joined 13 Mar 2024</div></div></li>
+        <li><div class="card"><span class="code">VFP773</span>
+          <div class="name">Kritika</div>
+          <div class="role">Accounts executive</div>
+          <div class="line">Accounts · joined 02 May 2024</div></div></li>
+      </ul>
+      <p class="count">2 direct reports</p>
+    </section>
+
+  </div>
+
+  <footer>
+    Built from the HR extract dated 25 July 2026, with designations corrected as advised. Each card carries employee code, sub-department and date of joining.<br>
+    <b>To confirm:</b> the field coordinator card is shown as Vishal but still carries code VFP1791 and the joining date of 25 Feb 2026 from the extract row for Dheeraj Kumar.<br>
+    <b>To confirm:</b> Harsh Chamaria and Jagdish Chandrayya Poojary do not appear as rows in the extract; both are carried forward from the earlier list.
+  </footer>
+
+</div>
+</body>
+</html>
